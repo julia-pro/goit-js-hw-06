@@ -1,7 +1,7 @@
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
-    .padStart(6, 0)}`;
+    .padStart(6, '0')}`;
 }
 
 // Отримуємо посилання на необхідні елементи DOM
@@ -18,8 +18,6 @@ function changeBackgroundColor() {
 
 // Додаємо обробник події для кнопки "Change color"
 changeColorButton.addEventListener('click', changeBackgroundColor);
-
-
 
 // Напиши скрипт, який змінює кольори фону елемента <body> через інлайн-стиль по кліку на button.change-color і виводить значення кольору в span.color.
 
