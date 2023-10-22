@@ -4,20 +4,18 @@ function getRandomHexColor() {
     .padStart(6, '0')}`;
 }
 
-// Отримуємо посилання на необхідні елементи DOM
-const widget = document.querySelector('.widget');
-const colorText = widget.querySelector('.color');
-const changeColorButton = widget.querySelector('.change-color');
+const body = document.querySelector('body'); 
+const changeColor = document.querySelector('.change-color');
+const valueColor = document.querySelector('.color');
 
-// Функція, яка змінює колір фону та відображає значення кольору
-function changeBackgroundColor() {
+changeColor.addEventListener('click', onChangeColor);
+
+function onChangeColor() {
   const randomColor = getRandomHexColor();
-  document.body.style.backgroundColor = randomColor;
-  colorText.textContent = randomColor;
+  body.style.backgroundColor = randomColor;
+  valueColor.textContent = randomColor;
+  console.log(randomColor);
 }
-
-// Додаємо обробник події для кнопки "Change color"
-changeColorButton.addEventListener('click', changeBackgroundColor);
 
 // Напиши скрипт, який змінює кольори фону елемента <body> через інлайн-стиль по кліку на button.change-color і виводить значення кольору в span.color.
 
