@@ -7,15 +7,16 @@ const ingredients = [
   'Condiments',
 ];
 
-const ul = document.getElementById("ingredients"); // Отримуємо посилання на список ul#ingredients
+const ulIngredients = document.getElementById("ingredients");
 
-// Проходимо по масиву ingredients та додаємо кожен інгредієнт до списку
-ingredients.forEach((ingredient) => {
-  const li = document.createElement("li"); // Створюємо новий елемент li
-  li.textContent = ingredient; // Додаємо текстовий вміст до li
-  li.classList.add("item"); // Додаємо клас "item" до li
-  ul.appendChild(li); // Додаємо li до списку ul
+const liElements = ingredients.map(ingredient => {
+  const li = document.createElement("li");
+  li.textContent = ingredient;
+  li.classList.add("item");
+  return li;
 });
+
+ulIngredients.append(...liElements);
 
 
 

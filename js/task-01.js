@@ -50,24 +50,18 @@
 // Category: Technologies
 // Elements: 5
 
-// Знайти елемент ul#categories.
 const categoriesList = document.querySelector('#categories');
+const categories = categoriesList.children;
 
-// Знайти всі елементи li.item в ul#categories.
-const categoryItems = categoriesList.querySelectorAll('li.item');
+console.log(`Number of categories: ${categories.length}`);
 
-// Вивести кількість категорій в ul#categories.
-console.log(`Number of categories: ${categoryItems.length}`);
+for (let i = 0; i < categories.length; i++) {
+  const category = categories[i];
+  const categoryName = category.firstElementChild.textContent;
+  const categoryItems = category.lastElementChild.children.length;
 
-// Пройтись по кожному елементу li.item та вивести текст заголовку і кількість елементів в категорії.
-categoryItems.forEach(categoryItem => {
-  const categoryTitle = categoryItem.querySelector('h2').textContent;
-  const categoryElements = categoryItem.querySelectorAll('ul li').length;
-  console.log(`Category: ${categoryTitle}`);
-  console.log(`Elements: ${categoryElements}`);
-});
-
-
-
+  console.log(`Category: ${categoryName}`);
+  console.log(`Elements: ${categoryItems}`);
+}
 
 
